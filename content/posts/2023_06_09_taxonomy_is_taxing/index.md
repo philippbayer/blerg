@@ -4,7 +4,7 @@ date: 2023-06-09T20:32:22+08:00
 description: i ramble about taxonomy
 ---
 
-It's been a year since I started at [Minderoo OceanOmics](https://www.minderoo.org/oceanomics/), jumping from a plant bioinformatics background into fish eDNA. The difference has been huge: I went from working with three species to working with about 6,000 species (in Australia; worldwide it's more than 30,000 species). For fish taxonomy, there are at least three databases: The World Register of Marine Species (WoRMS), Eschmeyer's Catalog of fishes, and Fishbase (plus NCBI Taxonomy, Australian Faunal Directory, Global Biodiversity Information Facility (GBIF), Atlas of Living Australia, etc. pp.). They all have different goals; Eschmeyer, for example, focuses mostly on taxonomic changes, synonyms etc., while Fishbase tries to do more than that.
+It's been a year since I started at [Minderoo OceanOmics](https://www.minderoo.org/oceanomics/), jumping from a plant bioinformatics background into fish eDNA. The difference has been huge: I went from working with three species to working with about 6,000 species (in Australia; worldwide it's more than 30,000 species). For fish taxonomy, there are at least three databases: [The World Register of Marine Species (WoRMS)](https://www.marinespecies.org/), [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp), and [Fishbase](https://fishbase.org.au) (plus [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi), [Australian Faunal Directory](https://biodiversity.org.au/afd/home), [Global Biodiversity Information Facility (GBIF)](https://www.gbif.org/), [Atlas of Living Australia](https://www.ala.org.au/), etc. pp.). They all have different goals; Eschmeyer, for example, focuses mostly on taxonomic changes, synonyms etc., while Fishbase tries to do more than that.
 
 I had to learn the hard way how messy taxonomy can get; here are some of my main mistakes.
 
@@ -12,7 +12,7 @@ I had to learn the hard way how messy taxonomy can get; here are some of my main
  
 Here's a lazy shortcut to check whether a taxonomic label is a species: count the spaces in the string, there should be only one, as in *Homo sapiens* or *Carcharhinus altimus*. But then you find species in sequencing and sighting databases like *Phrynocephalus mystaceus aurantiacocaudatus* or, the taxonomic database equivalent of 'I'll do that later', *Ulva* sp. BW-2013 (clade G) cf. or *Molannodes* SC sp.
 
-Then there's the hybrids! Those have an X in the middle, the X stands for headaches. My favorite so far is '(*Megalobrama amblycephala* x *Megalobrama terminalis*) x (*Megalobrama amblycephala* x *Parabramis pekinensis*)'. That's one species; a nightmare to parse. ([TaxoNERD](https://github.com/nleguillarme/taxonerd/issues/11) can help!)
+Then there's the hybrids! Those have an X in the middle, the X stands for 'eXtreme headache'. My favorite so far is '(*Megalobrama amblycephala* x *Megalobrama terminalis*) x (*Megalobrama amblycephala* x *Parabramis pekinensis*)'. That's one species; a nightmare to parse. ([TaxoNERD](https://github.com/nleguillarme/taxonerd/issues/11) can help!)
 
 # Mistake 2: there's one 'common' name for every scientific name.
 
@@ -41,3 +41,7 @@ I mentioned *Argyrops spinifer* above. In the Australian export documentation sy
 I'd say a good 5 to 10% of the genomic marker sequences deposited for fish on NCBI have the wrong species label. Curating such a database for Australian fish has been part of my recent work. There's a public curated list with a UK emphasis within [meta-fish-lib](https://github.com/genner-lab/meta-fish-lib/blob/main/assets/exclusions.csv). Look at all these wrong species! Fixing those within NCBI is not easy, there's no real 'complain here' pathway. Usually the submitting group itself has to fix those issues. All you can do is keep a blacklist and always evaluate your hits. 
 
 Even if the NCBI entry gets fixed it can get confusing: [NC_004409.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_004409.1) has *Lycodes toyamensis* in the title but was submitted as, and still has the ORGANISM field, *Icelus toyamensis*. According to Eschmeyer, those are two different species. If you BLAST this mitogenome it does look like a *Lycodes*, but who knows if the species is correct - there's no changelog that indicates what the reasoning for the new name was.
+
+# Mistake 8: ChatGPT can fix all this.
+
+ChatGPT 3.5 hallucinates nonsense about scientific names, roughly guessing from their Latin meaning. ChatGPT 4 usually says 'I don't know' as details about fishes appear far more rarely in the training data, than, say, the opinions of Redditors on Game Of Thrones.
