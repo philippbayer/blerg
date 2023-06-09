@@ -1,7 +1,7 @@
 ---
 title: "Taxonomy is taxing"
 date: 2023-06-09T20:32:22+08:00
-draft: true
+description: i ramble about taxonomy
 ---
 
 It's been a year since I started at [Minderoo OceanOmics](https://www.minderoo.org/oceanomics/), jumping from a plant bioinformatics background into fish eDNA. The difference has been huge: I went from working with three species to working with about 6,000 species (in Australia; worldwide it's more than 30,000 species). For fish taxonomy, there are at least three databases: The World Register of Marine Species (WoRMS), Eschmeyer's Catalog of fishes, and Fishbase (plus NCBI Taxonomy, Australian Faunal Directory, Global Biodiversity Information Facility (GBIF), Atlas of Living Australia, etc. pp.). They all have different goals; Eschmeyer, for example, focuses mostly on taxonomic changes, synonyms etc., while Fishbase tries to do more than that.
