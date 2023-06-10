@@ -32,7 +32,7 @@ Far better: World Register of Marine Species (WoRMS) uses a stable numeric Aphia
 
 ## Mistake 5: 'Fixed' names will propagate across databases.
 
-I mentioned *Argyrops spinifer* above. In the Australian export documentation system, these were renamed into *Argyrops bleekeri* [Source](https://www.agriculture.gov.au/biosecurity-trade/export/controlled-goods/fish/industry-advice-notices/2022/2022-02). Eschmeyer and Fishbase say these are two different species. I don't know hwhy either. NCBI Taxonomy does not include names for species that have no data deposited; lots of known fish out there with no Taxonomy ID.
+I mentioned *Argyrops spinifer* above. In the Australian export documentation system, these were renamed into *Argyrops bleekeri* [Source](https://www.agriculture.gov.au/biosecurity-trade/export/controlled-goods/fish/industry-advice-notices/2022/2022-02). Eschmeyer and Fishbase say these are two different species. I don't know why either. NCBI Taxonomy does not include names for species that have no data deposited; lots of known fish out there with no Taxonomy ID.
 
 ## Mistake 6: surely the families are identical everywhere?
 
@@ -47,3 +47,7 @@ Even if the NCBI entry gets fixed it can get confusing: [NC_004409.1](https://ww
 ## Mistake 8: ChatGPT can fix all this.
 
 ChatGPT 3.5 hallucinates nonsense about scientific names, roughly guessing from their Latin meaning. ChatGPT 4 usually says 'I don't know' as details about fishes appear far more rarely in the training data, than, say, the opinions of Redditors on Game Of Thrones.
+
+---
+
+Thanks for reading so far! You can give me feedback on [Mastodon](https://genomic.social/@PhilippBayer/)!
