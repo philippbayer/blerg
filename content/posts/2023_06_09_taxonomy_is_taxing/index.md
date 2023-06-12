@@ -44,6 +44,8 @@ I'd say a good 5 to 10% of the genomic marker sequences deposited for fish on NC
 
 Even if the NCBI entry gets fixed it can get confusing: [NC_004409.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_004409.1) has *Lycodes toyamensis* in the title but was submitted as, and still has the ORGANISM field, *Icelus toyamensis*. According to Eschmeyer, those are two different species. If you BLAST this mitogenome it does look like a *Lycodes*, but who knows if the species is correct - there's no changelog that indicates what the reasoning for the new name was.
 
+Another example is [AF221864.1](https://www.ncbi.nlm.nih.gov/nucleotide/AF221864.1?report=genbank), a partial 16S sequence of *Myctophum punctatum*. But if you chuck that sequence into BLAST (press 'Run BLAST' in the top-right corner) this sequence will not hit the other *M. punctatum* sequences, it will first hit itself with 100% identity, then four *Symbolophorus rufinus/californiensis* 16S sequences with 91% identity, *then* other *M. punctatum* sequences with 90% identity. It's clearly not *M. punctatum*, it might not even by *Myctophum*, maybe a *Symbolophorus*, but who knows. There's nothing like it on NCBI (that would require a >98% identity for starters) - yet it's a real sequence, a real fish, since I find this sequence in my samples from Australian waters.
+
 ## Mistake 8: ChatGPT can fix all this.
 
 ChatGPT 3.5 hallucinates nonsense about scientific names, roughly guessing from their Latin meaning. ChatGPT 4 usually says 'I don't know' as details about fishes appear far more rarely in the training data, than, say, the opinions of Redditors on Game Of Thrones.
