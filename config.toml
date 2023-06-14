@@ -65,7 +65,7 @@ ignoreErrors = ["additional-script-loading-error"]
   avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
   intro = "Philipp's notes"
   name = "Philipp Bayer"
-  description = "Rambling at the intersection of bioinformatics, machine learning, the ocean, and work"
+  description = "Rambling at the intersection of genomics, machine learning, the ocean, science, and work"
 
 
 [[params.socialIcons]]
@@ -77,12 +77,12 @@ name = "mastodon"
 url = "https://genomic.social/@PhilippBayer"
 
 [[params.socialIcons]]
-name = "Rss"
-url = "index.xml"
-
-[[params.socialIcons]]
 name = "linkedin"
 url = "https://www.linkedin.com/in/philipp-bayer-93398b43/"
+
+[[params.socialIcons]]
+name = "Rss"
+url = "index.xml"
 
 [tableOfContents]
 startLevel = 2 # ToC starts from H2
