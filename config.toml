@@ -1,19 +1,50 @@
-baseURL = "http://example.org/"
 languageCode = "en-us"
 title = ""
-theme = 'hugo-bearblog'
+theme = 'hugo-blog-awesome'
 author = "Philipp Bayer"
 copyright = "Copyright © 2023, Philipp Bayer"
 enableRobotsTXT = true
+defaultContentLanguage = "en-aus"
 disableKinds = ["taxonomy"]
-ignoreErrors = ["error-disable-taxonomy"]
+enableEmoji = true
+ignoreErrors = ["additional-script-loading-error"]
+
+# ignoreErrors = ["error-disable-taxonomy"]
 [permalinks]
   blog = "/:slug/"
   tags = "/blog/:slug"
 
+# for code highlighting
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[menu]
+  [[menu.main]]
+    # The page reference (pageRef) is useful for menu highlighting
+    # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    pageRef="posts"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    pageRef="about"
+    name = 'About'
+    url = '/about/'
+    weight = 30
+
 [params]
   # The "description" of your website. This is used in the meta data of your generated html.
   description = "Philipp Bayer's blog"
+  defaultColor = 'dark'
 
   # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
   # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
@@ -25,12 +56,35 @@ ignoreErrors = ["error-disable-taxonomy"]
   # https://gohugo.io/templates/internal#open-graph.
   images = ["images/share.png"]
 
-  # Another "title" :-). This one is used as the site_name on the Hugo's internal
-  # opengraph structured data template.
-  # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
-  title = "Hugo ʕ•ᴥ•ʔ Bear"
+  mainSections = ['posts']
+  toc = true # set to false to disable table of contents 'globally'
+  goToTop = true # set to false to disable 'go to top' button
+  additionalScripts = ['js/custom.js', 'js/custom-2.js']
 
-  # This theme will, by default, inject a made-with-line at the bottom of the page.
-  # You can turn it off, but we would really appreciate if you don’t :-).
-  # hideMadeWithLine = true
+[params.author]
+  avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
+  intro = "Philipp's notes"
+  name = "Philipp Bayer"
+  description = "Rambling at the intersection of bioinformatics, machine learning, the ocean, and work"
 
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/philippbayer/"
+
+[[params.socialIcons]]
+name = "mastodon"
+url = "https://genomic.social/@PhilippBayer"
+
+[[params.socialIcons]]
+name = "Rss"
+url = "index.xml"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/philipp-bayer-93398b43/"
+
+[tableOfContents]
+startLevel = 2 # ToC starts from H2
+endLevel = 4 # ToC ends at H4
+ordered = false # generates <ul> instead of <ol>
