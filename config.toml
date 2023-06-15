@@ -57,7 +57,7 @@ ignoreErrors = ["additional-script-loading-error"]
   images = ["images/share.png"]
 
   mainSections = ['posts']
-  toc = true # set to false to disable table of contents 'globally'
+  toc = false # set to false to disable table of contents 'globally'
   goToTop = true # set to false to disable 'go to top' button
   additionalScripts = ['js/custom.js', 'js/custom-2.js']
 
