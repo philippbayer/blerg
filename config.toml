@@ -55,6 +55,7 @@ ignoreErrors = ["additional-script-loading-error"]
   # See https://gohugo.io/templates/internal#twitter-cards and
   # https://gohugo.io/templates/internal#open-graph.
   images = ["images/share.png"]
+  ogimage = 'images/share.png'
 
   mainSections = ['posts']
   toc = false # set to false to disable table of contents 'globally'
