@@ -37,9 +37,8 @@ Combiners are needed in academia, every lab is drowning in data that they cannot
 
 # Where to next?
 
-As written in countless other pieces, academia needs to change how it evaluates itself, away from 'lone leaders' and towards group efforts. That needs a cultural change, not just in academia, but also in how wider society sees scientists: not as lone geniuses with white hair sitting in their ivory towers, but regular people with mortgages and children working together.
+As written in countless other pieces, academia needs to change how it evaluates itself, away from 'lone leaders' and towards group efforts. That needs a cultural change, not just in academia, but also in how wider society sees scientists: not as lone geniuses with white hair sitting in their ivory towers, but regular people with mortgages and children, working together.
 
 I'm too old to wait for that change to happen. I'm already half-way done with my career: science progresses by funerals.
-
 
 P.S.: The Research Engineer pathway is a partial answer to the question of career. ResEngs are not academics, but academic staff. But then you have a new problem: university career pathways are generally managerial in nature, there are no engineer-heavy pathways like FAANG and other engineering companies have. At some point ResEngs will run out of career and additional earnings.
