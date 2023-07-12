@@ -22,6 +22,10 @@ An academic career is a lonely one. You always have to be the 'leader' on a pape
 
 It also helped with my imposter syndrome: Most of the time, research makes me feel like an idiot. I start the day with nothing working and end the day with nothing working, but in a different way. It was always a boon to come to Hacky Hour and help a beginner with some ggplot2-graphs; fixing common beginners' bugs and suddenly I didn't feel so dumb anymore!
 
+# A generational turning point
+
+As the years went on, I realised that Hacky Hour plugged a specific generational gap. The current generation of research is computational with practically all papers the result of complex code. PhD-students and ECRs need to code. But here's the problem: the senior professors, the only sources of learning for the PhDs and ECRs, have never developed these necessary skills. They never needed to, the research they drove was done in the field with minimal computation. There's a need to learn from the bottom with very little teaching from the top. That's the gap that Hacky Hour, inadvertently, started to bridge. But 1 or 2 hours a week can't solve a complete lack of computational learning and mentoring infrastructure.
+
 # A waste of time?
 
 To academia's incentive structures, running something like Hacky Hour is a waste of time. Does it produce papers? Does it produce grants? No and no (it did *start* some collaborations though). The time spent on Hacky Hour I could've spent on writing papers. It sounds 'nice' to have run this community and to some people, sometimes, it was a bonus on my CV, but grant bodies never cared. Getting first-author papers or grants out of Hacky Hour was never the goal, but it explains why there are so few Hacky Hours left: running these events slightly hurts your academic career. It might have even hurt the perception of people of me: 'he's not serious about academia, he wastes time running this'. I have no way of telling but I have heard senior academics express these similar sentiments about others.
