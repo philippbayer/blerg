@@ -32,7 +32,7 @@ is evaluated to
 
 > hey ho
 
-In my above search commands, this means that 'cytochrome oxidase subunit I' as a single search-term turned into four search terms, some of which very generic. All kinds of genes have 'subunit' in their name! That's why the Entrez API returned all kinds of random genes.
+In my above search commands, this means that "cytochrome oxidase subunit I" as a single search-term turned into four search terms, "cytochrome", "oxidase", "subunit", and "I". All kinds of genes have "subunit" and "I" in their name! That's why the Entrez API returned all kinds of random genes.
 
 This is partially an issue caused by using Python to write bash scripts; I escape the double quotes via \\", but that fixes only quotes within quotes in *Python*, not bash. I would've needed to write \\\\" to keep the \\" intact inside the bash script. A Matryoshka doll of quotes.
 
