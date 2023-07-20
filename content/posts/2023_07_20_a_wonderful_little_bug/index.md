@@ -51,3 +51,7 @@ But in reality, those double quotes just cancel each other out.
 P.P.S: As Russell Neches points out on Mastodon, Entrez queries are full of little pitfalls. Time for some out-of-the-box thinking!
 
 ![Screenshot from Mastodon](russell.png)
+
+P.P.P.S: As Peter J Cock [points out on Mastodon](https://genomic.social/@pjacock@fediscience.org/110745165636388698), I could've also just used [Bio.Entrez](https://biopython.org/docs/1.76/api/Bio.Entrez.html) within Biopython. I might've hit similar bugs once I would've debugged on the command line, though.
+
+![Screenshot from Mastodon](peter.png)
