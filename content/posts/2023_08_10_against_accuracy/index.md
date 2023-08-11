@@ -1,10 +1,10 @@
 ---
 title: "Against accuracy"
-date: 2023-08-06
+date: 2023-08-10
 description: i ramble about focusing on the wrong thing
 ---
 
-Let's start with a quote from a recent preprint, Gihawi et al., 2023, [Major data analysis errors invalidate cancer microbiome findings](https://www.biorxiv.org/content/10.1101/2023.07.28.550993v1.full), doi: https://doi.org/10.1101/2023.07.28.550993 which is a re-analysis of the results published after peer review in Poore et al., 2023, [Microbiome analyses of blood and tissues suggest cancer diagnostic approach](https://www.nature.com/articles/s41586-020-2095-1).
+Let's start with a quote from a recent preprint, Gihawi et al., 2023, [Major data analysis errors invalidate cancer microbiome findings](https://www.biorxiv.org/content/10.1101/2023.07.28.550993v1.full), doi: https://doi.org/10.1101/2023.07.28.550993 which is a re-analysis of the results published after peer review in Poore et al., 2020, [Microbiome analyses of blood and tissues suggest cancer diagnostic approach](https://www.nature.com/articles/s41586-020-2095-1).
 
 >As illustrated in Figure 2, the extremely non-random distribution of normalized values–all but one of which started as raw values of zero–makes it easy for a machine learning classifier to separate the ACC samples from other cancers. If we call the normalized Hepandensovirus value HN, then if the model splits the samples using the simple rule HN>3.078874655, it will label 71/79 (90%) of the positive samples correctly, and only make 77/17,625 (0.4%) errors (Figure 2). This explains why Hepandensovirus was the highest-weighted feature for the machine learning model distinguishing ACC from other cancers in the most stringent decontamination (MSD) data set, despite the fact that only 1/17,624 samples had any reads at all matching this virus.
 
