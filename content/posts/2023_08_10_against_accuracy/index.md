@@ -36,6 +36,8 @@ Checking all the cases where your model is overconfident is *boring*. It involve
 
 At this point, especially in my messy corner of biology, a high accuracy is a red flag to me. That *could* happen by luck, or because the problem is too easy, but it shouldn't be the rule: a high accuracy indicates that something is going wrong more often than not. You have to work hard to convince me to believe accuracies above 90% or 95%. How much work have you put in to get your accuracies this high? It's just a shame that peer review looks for high accuracies: selecting for high-accuracy models will lead to wrong models, as we've seen on top.
 
+(I guess this is also why I so rarely hear about Kaggle-winning models make it into papers or production: Kaggle hyper-fixates on accuracies and loss, I'm sure the winning models run into real-life issues fast once they're deployed.)
+
 In other words: Don't measure your models only *quantitatively*, also look at the *qualitative* side. Another example: With modern LLMs I've found little correlation between their behaviour in benchmarks and their behaviour with my data. The 'feel' (what Feyerabend calls the 'tacit knowledge') is important, and you can only get that by sitting down with your model and spending time to dig out the model's predictions and assumptions.  
 There are no magic bullets.
 
