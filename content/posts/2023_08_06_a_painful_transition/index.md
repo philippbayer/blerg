@@ -29,3 +29,5 @@ I just checked: on Seek for Perth I find *zero* jobs mentioning SLURM, the HPC w
 It looks similar around Australia: 2 jobs mention snakemake/nextflow (they're the same posting), zero jobs mention SLURM, 3,498 jobs mention Azure, 182 jobs mention Kafka.
 
 So there you have it: it's just not the coding skills anymore. Those skills are the *start*.
+
+Edit, 22.8.2023: *Getting* the certifications for these tools as an academic is not easy, either! The 'AWS certified Solutions Architect Professional' certification, for example, recommends two years of AWS Cloud experience. How are you going to get those two years in academia?
