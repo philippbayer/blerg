@@ -8,6 +8,8 @@ AMD GPUs are being rolled out in high-performance clusters across the world, inc
 
 Here's how I got ROCm to work with 🤗 HuggingFace Transformers on Setonix.
 
+# Installing everything
+
 First, I use this alias for nicer work on the `gpu-dev` queue:
 
     alias getgpunode='salloc -p gpu-dev --nodes=1 --gpus-per-node=1 --account=${PAWSEY_PROJECT}-gpu'   
@@ -57,7 +59,9 @@ For Transformers to work I also had to upgrade `accelerate`:
 
 Now we should have everything in place to run Transformers. IMHO, the installation process wasn't *too* bad, similar in pain to installing this stuff under CUDA. There are still some models on  🤗HuggingFace that I can't get to run under CUDA... For both CUDA and ROCm it mostly boils down to using the correct index-url for torch and the right flavour of tensorflow.
 
-I was able to run the snippet of code on the bottom of the page for InstaDeepAI's The Nucleotide Transformer model [nucleotide-transformer-500m-1000g](https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-1000g), here's my code:
+# Let's train!
+
+I was able to run the snippet of code on the bottom of the page for InstaDeepAI's The Nucleotide Transformer model [nucleotide-transformer-500m-1000g](https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-1000g), but here's my code to finetune this transformer and use it to classify some DNA:
 
 	import torch
 	print(torch.cuda.is_available())
@@ -166,14 +170,17 @@ After training, you can load the model and do some predictions:
     preds_flat = [np.argmax(x) for x in preds[0]]
     print(preds_flat[:5])
 
+This should print something like [0, 0, 0, 0, 0], the first five predicted labels.
+
 How do you know that it's actually using the GPU? Here's some Python code that'll tell you:
 
     print(f'devices: {torch.cuda.device_count()}')
     print(f'current dev: {torch.cuda.current_device()}')
     print(f'current dev name: {torch.cuda.get_device_name(torch.cuda.current_device())}')
 
-This prints out whether Python sees the GPU in the first place. On Setonix, you can also ssh into the nodes that are running your jobs! Use `squeue` to see which node runs your job. After ssh-ing in, run `rocm-smi` to see the GPU usage on the current node.
+This prints out whether Python sees the GPU in the first place.
 
+On Setonix, you can also ssh into the nodes that are running your jobs! Use `squeue` to see which node runs your job. They're usually named like *nid12345*. After ssh-ing in, run `rocm-smi` to see the GPU usage on the current node.
 
 Now we're ready to train big, big models on a cluster with 192 GPU nodes, each with effectively eight GPUs (4 GPUs with 2 'Graphics Complex Dies' (GCDs)). Happy training!
 
@@ -183,7 +190,7 @@ P.P.S.: See the [Pawsey documentation for more detailed info](https://support.pa
 
 P.P.P.S.: Some errors I encountered:
 
-`python3.10/site-packages/torch/lib/libtorch_cpu.so: undefined symbol: roctracer_next_record, version ROCTRACER_4.1`: this happened when I installed the wrong PyTorch version for the wrong ROCm. Make sure the index-url's ROCm version is close to the ROCm offered by Setonix, and that you're loading the right module version.
+`python3.10/site-packages/torch/lib/libtorch_cpu.so: undefined symbol: roctracer_next_record, version ROCTRACER_4.1` - this one is funny, at the time of this writing there are no results on Google for this error. Tells you how much AMD is used in production! For me this happened when I installed the wrong PyTorch version for the wrong ROCm. Make sure the index-url's ROCm version is close to the ROCm loaded by Setonix, and that you're loading the right module version.
 
 `Device-side assertion t >= 0 && t < n_classes' failed.` - in my training data, I started my class labels with a random large number instead of zero. I replaced class-labels all by a counter starting from 0.
 
