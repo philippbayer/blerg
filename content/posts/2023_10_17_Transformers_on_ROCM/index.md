@@ -55,7 +55,9 @@ For Transformers to work I also had to upgrade `accelerate`:
 
     pip install -U accelerate
 
-Now we should have everything in place to run Transformers. I was able to run the snippet of code on the bottom of the page for InstaDeepAI's The Nucleotide Transformer model [nucleotide-transformer-500m-1000g](https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-1000g), here's my code:
+Now we should have everything in place to run Transformers. IMHO, the installation process wasn't *too* bad, similar in pain to installing this stuff under CUDA. There are still some models on  🤗HuggingFace that I can't get to run under CUDA... It mostly boils down to using the correct index-url for torch and the right flavour of tensorflow.
+
+I was able to run the snippet of code on the bottom of the page for InstaDeepAI's The Nucleotide Transformer model [nucleotide-transformer-500m-1000g](https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-1000g), here's my code:
 
 	import torch
 	print(torch.cuda.is_available())
@@ -172,13 +174,14 @@ How do you know that it's actually using the GPU? Here's some Python code that'l
 
 This prints out whether Python sees the GPU in the first place. On Setonix, you can also ssh into the nodes that are running your jobs! Use `squeue` to see which node runs your job. After ssh-ing in, run `rocm-smi` to see the GPU usage on the current node.
 
+
 Now we're ready to train big, big models on a cluster with 192 GPU nodes, each with effectively eight GPUs (4 GPUs with 2 'Graphics Complex Dies' (GCDs)). Happy training!
 
-Next we'll have to package the above up in a Dockerfile - that's for another day. No need to waste all that space on thousands of conda-generated files when we can just have one neat Docker-image.
+P.S.: Next we'll have to package the above up in a Dockerfile - that's for another day. No need to waste all that space on thousands of conda-generated files when we can just have one neat Docker-image.
 
-See the [Pawsey documentation for more detailed info](https://support.pawsey.org.au/documentation/display/US/Setonix+GPU+Partition+Quick+Start), especially some useful SLURM scripts and ways to run several GPUs at once.
+P.P.S.: See the [Pawsey documentation for more detailed info](https://support.pawsey.org.au/documentation/display/US/Setonix+GPU+Partition+Quick+Start), especially some useful SLURM scripts and ways to run several GPUs at once.
 
-Some errors I encountered:
+P.P.P.S.: Some errors I encountered:
 
 `python3.10/site-packages/torch/lib/libtorch_cpu.so: undefined symbol: roctracer_next_record, version ROCTRACER_4.1`: this happened when I installed the wrong PyTorch version for the wrong ROCm. Make sure the index-url's ROCm version is close to the ROCm offered by Setonix, and that you're loading the right module version.
 
