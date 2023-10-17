@@ -83,7 +83,7 @@ url = "https://www.linkedin.com/in/philipp-bayer-93398b43/"
 
 [[params.socialIcons]]
 name = "Rss"
-url = "index.xml"
+url = "http://philippbayer.github.io/blerg/index.xml"
 
 [tableOfContents]
 startLevel = 2 # ToC starts from H2
