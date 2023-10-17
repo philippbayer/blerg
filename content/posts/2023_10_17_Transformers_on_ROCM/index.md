@@ -55,7 +55,7 @@ For Transformers to work I also had to upgrade `accelerate`:
 
     pip install -U accelerate
 
-Now we should have everything in place to run Transformers. IMHO, the installation process wasn't *too* bad, similar in pain to installing this stuff under CUDA. There are still some models on  🤗HuggingFace that I can't get to run under CUDA... It mostly boils down to using the correct index-url for torch and the right flavour of tensorflow.
+Now we should have everything in place to run Transformers. IMHO, the installation process wasn't *too* bad, similar in pain to installing this stuff under CUDA. There are still some models on  🤗HuggingFace that I can't get to run under CUDA... For both CUDA and ROCm it mostly boils down to using the correct index-url for torch and the right flavour of tensorflow.
 
 I was able to run the snippet of code on the bottom of the page for InstaDeepAI's The Nucleotide Transformer model [nucleotide-transformer-500m-1000g](https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-1000g), here's my code:
 
