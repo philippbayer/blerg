@@ -174,6 +174,8 @@ This prints out whether Python sees the GPU in the first place. On Setonix, you 
 
 Now we're ready to train big, big models on a cluster with 192 GPU nodes, each with effectively eight GPUs (4 GPUs with 2 'Graphics Complex Dies' (GCDs)). Happy training!
 
+Next we'll have to package the above up in a Dockerfile - that's for another day. No need to waste all that space on thousands of conda-generated files when we can just have one neat Docker-image.
+
 See the [Pawsey documentation for more detailed info](https://support.pawsey.org.au/documentation/display/US/Setonix+GPU+Partition+Quick+Start), especially some useful SLURM scripts and ways to run several GPUs at once.
 
 Some errors I encountered:
