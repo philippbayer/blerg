@@ -16,20 +16,20 @@ First, I use this alias for nicer work on the `gpu-dev` queue:
 
 Notice the -gpu at the end of the account: currently Pawsey treats GPU jobs on a different account from your 'main' account.
 
-I am using conda (mamba) on /scratch here. Pawsey staff doesn't seem to be the biggest fan of conda as it makes many, many files per environment which slows down /scratch for everyone. It's better to use Docker images. But with machine learning/deep learning libraries especially with models stored on 🤗 Hugging Face spaces I've always had to fight to get just the right 'mix' of package version numbers to make the model work: it's easier to do that in conda first, then to build the Docker image from there.
+I am using conda (mamba) on /scratch here. Pawsey staff doesn't seem to be the biggest fan of conda as it makes many, many files per environment which slows down /scratch for everyone. It's better to use Docker images. But with machine learning/deep learning libraries, especially with models stored on 🤗 Hugging Face spaces, I've always had to fight to get just the right 'mix' of package version numbers to make the model work: it's easier to do that in conda first, then to build the Docker image from there.
 
 I'm making a fresh conda environment somewhere on /scratch: (/software can also be used, but file limits are strict: check using `lfs quota /software`). The 30-day deletion policy will eventually get rid of this environment.
 
     mamba create -p (somewhere on scratch)/transformers transformers python=3.10
     conda activate (somewhere on scratch)/transformers
 
-Now we need to install the right version of PyTorch. There are CUDA-specific versions of PyTorch so there are ROCm-specific version of PyTorch. At the time of this writing, Pawsey has two ROCm versions as modules:
+Now we need to install the right version of PyTorch. Just as there are CUDA-specific versions of PyTorch there are ROCm-specific version of PyTorch. At the time of this writing, Pawsey has two ROCm versions as modules:
 
-The following code is run in an interactive GPU session via the above `getgpunode` alias:
+(The following code is run in an interactive GPU session via the above `getgpunode` alias)
 
     module avail rocm
 
-tells us there's 5.2.3 (default, *D*) and 5.4.3. Let's load 5.4.3 because we live in the future:
+tells us there's 5.2.3 (default, **D**) and 5.4.3. Let's load 5.4.3 because we live in the future:
 
     module load rocm/5.4.3
 
@@ -190,7 +190,7 @@ P.P.S.: See the [Pawsey documentation for more detailed info](https://support.pa
 
 P.P.P.S.: Some errors I encountered:
 
-`python3.10/site-packages/torch/lib/libtorch_cpu.so: undefined symbol: roctracer_next_record, version ROCTRACER_4.1` - this one is funny, at the time of this writing there are no results on Google for this error. Tells you how much AMD is used in production! For me this happened when I installed the wrong PyTorch version for the wrong ROCm. Make sure the index-url's ROCm version is close to the ROCm loaded by Setonix, and that you're loading the right module version.
+python3.10/site-packages/torch/lib/libtorch_cpu.so: undefined symbol: roctracer_next_record, version ROCTRACER_4.1 - this one is funny, at the time of this writing there are no results on Google for this error. Tells you how much AMD is used in production! For me this happened when I installed the wrong PyTorch version for the wrong ROCm. Make sure the index-url's ROCm version is close to the ROCm loaded by Setonix, and that you're loading the right module version.
 
-`Device-side assertion t >= 0 && t < n_classes' failed.` - in my training data, I started my class labels with a random large number instead of zero. I replaced class-labels all by a counter starting from 0.
+Device-side assertion t >= 0 && t < n_classes' failed. - in my training data, I started my class labels with a random large number instead of zero. I replaced class-labels all by a counter starting from 0.
 
