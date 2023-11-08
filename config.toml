@@ -54,8 +54,8 @@ ignoreErrors = ["additional-script-loading-error"]
   # services like Twitter or Slack want to generate a preview of a link to your site.
   # See https://gohugo.io/templates/internal#twitter-cards and
   # https://gohugo.io/templates/internal#open-graph.
-  images = ["images/share.png"]
-  ogimage = 'images/share.png'
+  #images = ['images/fish-cover.png', "images/share.png"]
+  ogimage = 'images/fish-cover.png'
 
   mainSections = ['posts']
   toc = false # set to false to disable table of contents 'globally'
@@ -67,7 +67,6 @@ ignoreErrors = ["additional-script-loading-error"]
   intro = "Philipp's notes"
   name = "Philipp Bayer"
   description = "Rambling at the intersection of genomics, machine learning, the ocean, science, and work"
-
 
 [[params.socialIcons]]
 name = "github"
