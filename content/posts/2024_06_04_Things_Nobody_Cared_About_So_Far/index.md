@@ -22,6 +22,8 @@ There's this C. S. Lewis essay, [The Inner Ring](https://www.lewissociety.org/in
 
 6. How many obscurities I know about Python, or R, or SLURM, or whatever
 
+7. How reproducible and maintainable my code is
+
 and so much more.
 
 ## Things people care about, in university:
