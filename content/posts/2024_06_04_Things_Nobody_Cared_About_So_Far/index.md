@@ -1,6 +1,6 @@
 ---
 title: "Things Nobody Cared About"
-date: 2024-01-14
+date: 2024-06-04
 description: i ramble about things i did that nobody cared about
 ---
 
