@@ -1,6 +1,6 @@
 ---
 title: "Getting RStudio Server to run on Singularity & SLURM as of 2024"
-date: 2024-06-04
+date: 2024-09-06
 description: i ramble about rstudio
 ---
 
