@@ -29,7 +29,8 @@ Now I have a var folder, a tmp folder, and a folder that will be my home directo
 I have this in my .bashrc to quickly request an interactive job, you'd best get something similar:
 
 ```
-alias getnode='salloc -p debug --nodes=1 --ntasks=32 --cpus-per-task=1 --mem=58G --account=pawsey0812'
+alias getnode='salloc -p debug --nodes=1 --ntasks=32 \
+    --cpus-per-task=1 --mem=58G --account=pawsey0812'
 ```
 
 I request a node, load the Singularity module, and get any RStudio Docker image (tidyverse or rocker or whatever)
@@ -43,7 +44,12 @@ This will create a file called `rstudio_latest.sif`. The file contains our entir
 Now comes the *fiddly* part: 
 
 ```
-singularity exec  --bind=./home/var/lib:/var/lib/rstudio-server --bind=./home/var/run:/var/run/rstudio-server --bind=./home/tmp:/tmp  --bind=./home/:/home/pbayer/ rstudio_latest.sif rserver --www-port 8787 --www-address 0.0.0.0 --server-user $USER
+singularity exec  --bind=./home/var/lib:/var/lib/rstudio-server \
+   --bind=./home/var/run:/var/run/rstudio-server \
+   --bind=./home/tmp:/tmp  \
+   --bind=./home/:/home/pbayer/ \
+   rstudio_latest.sif rserver --www-port 8787 \
+   --www-address 0.0.0.0 --server-user $USER
 ``` 
 
 Let's look at these arguments step by step.
