@@ -44,7 +44,8 @@ This will create a file called `rstudio_latest.sif`. The file contains our entir
 Now comes the *fiddly* part: 
 
 ```
-singularity exec  --bind=./home/var/lib:/var/lib/rstudio-server \
+singularity exec \
+   --bind=./home/var/lib:/var/lib/rstudio-server \
    --bind=./home/var/run:/var/run/rstudio-server \
    --bind=./home/tmp:/tmp  \
    --bind=./home/:/home/$USER/ \
@@ -73,3 +74,8 @@ ssh -N -f -L 8888:SERVERNAME:8787 YOUR_USER@setonix.pawsey.org.au
 ```
 
 This will 'build a tunnel' from your local server, port 8888, to the remote server, port 8787 (the port we chose above! Be careful to use the same here.) All we have to do then is to open our browser, and we should have RStudio Server running at http://localhost:8888. Happy RStudio-ing!
+
+Caveats:
+
+- home/, var/, tmp/ etc. have to live somewhere. They'll get deleted on most clusters' scratch directories automatically after 21 or 30 days. This is a nice use-case for a [Singularity overlay file-system](https://docs.sylabs.io/guides/3.5/user-guide/persistent_overlays.html)!
+- It's not easy to automate this. You'll always need to copy-paste the node name for the local ssh tunnel. 
