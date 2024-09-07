@@ -20,7 +20,7 @@ mkdir home/var
 mkdir home/var/lib
 mkdir home/var/run
 mkdir home/tmp
-mkdir home/pbayer
+mkdir home/$USER
 ```
 
 Now I have a var folder, a tmp folder, and a folder that will be my home directory.
@@ -47,7 +47,7 @@ Now comes the *fiddly* part:
 singularity exec  --bind=./home/var/lib:/var/lib/rstudio-server \
    --bind=./home/var/run:/var/run/rstudio-server \
    --bind=./home/tmp:/tmp  \
-   --bind=./home/:/home/pbayer/ \
+   --bind=./home/:/home/$USER/ \
    rstudio_latest.sif rserver --www-port 8787 \
    --www-address 0.0.0.0 --server-user $USER
 ``` 
@@ -57,7 +57,7 @@ Let's look at these arguments step by step.
 - --bind=./home/var/lib:/var/lib/rstudio-server - This means that we bind our 'local' home/var/lib we created above into the servers '/var/lib/rstudio-server'. Without this line RStudio Server will try to write into this folder, but Singularity file-systems are read-only, so it will crash.
 - --bind=./home/var/run:/var/run/rstudio-server - same deal - RStudio will try to write into that folder.
 - --bind=./home/tmp:/tmp - again same deal.
-- --bind=./home/:/home/pbayer/ - I overwrite the home directory within the Singularity container for my username (pbayer) with a home folder outside on scratch, not inside the Singularity container. That lets me install packages in R, which by default go into the user's home directory.
+- --bind=./home/:/home/$USER/ - I overwrite the home directory within the Singularity container for my username (environment variable $USER) with a home folder outside on scratch, not inside the Singularity container. That lets me install packages in R, which by default go into the user's home directory.
 - --www-port 8787 - this will run the RStudio Server on port 8787. Any number > 1000 should be OK.
 - --www-address 0.0.0.0 - this will run the RStudio Server on localhost of the remote node.
 - --server-user $USER - by default, RStudio tries to run the server under user `rstudio-server` and crash. This option runs the server via your own user.
