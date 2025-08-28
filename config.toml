@@ -2,7 +2,7 @@ languageCode = "en-us"
 title = "Hello! Welcome!"
 theme = 'hugo-blog-awesome'
 author = "Philipp Bayer"
-copyright = "Copyright © 2023, Philipp Bayer"
+copyright = "Copyright © 2025, Philipp Bayer"
 enableRobotsTXT = true
 defaultContentLanguage = "en-aus"
 disableKinds = ["taxonomy"]
@@ -85,7 +85,7 @@ url = "https://www.linkedin.com/in/philipp-bayer-93398b43/"
 name = "Rss"
 url = "http://philippbayer.github.io/blerg/index.xml"
 
-[tableOfContents]
-startLevel = 2 # ToC starts from H2
-endLevel = 4 # ToC ends at H4
-ordered = false # generates <ul> instead of <ol>
+#[tableOfContents]
+#startLevel = 2 # ToC starts from H2
+#endLevel = 4 # ToC ends at H4
+#ordered = false # generates <ul> instead of <ol>
