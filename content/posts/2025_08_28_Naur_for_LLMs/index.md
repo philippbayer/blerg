@@ -38,7 +38,8 @@ The common theme is 'I tried to make it think and see what I got for it: nothing
 
 Peter Naur wrote this in 1985, 'Programming as Theory Building'. 
 
-    In terms of Ryle’s notion of theory, what has to be built by the programmer is a theory of how certain affairs of the world will be handled by, or supported by, a computer program. On the Theory Building View of programming the theory built by the programmers has primacy over such other products as program texts, user documentation, and additional documentation such as specifications
+> In terms of Ryle’s notion of theory, what has to be built by the programmer is a theory of how certain affairs of the world will be handled by, or supported by, a computer program. On the Theory Building View of programming the theory built by the programmers has primacy over such other products as program texts, user documentation, and additional documentation such as specifications.
+{cite=https://gwern.net/doc/cs/algorithm/1985-naur.pdf caption='Naur 1985, Programming as Theory Building'}
 
 Naur's dea was that most of the time writing code is figuring out that Theory - that's why it's far easier writing a program the second time around, you have the Theory now, the second time around you're just writing boilerplate.
 
